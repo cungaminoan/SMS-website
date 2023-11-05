@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Volo.Abp.Domain.Entities;
+using Volo.Abp.Domain.Entities.Auditing;
+
+namespace SMS.MstSoftwares
+{
+    public class MstSoftware : Entity
+    {
+        [Key]
+        [Required]
+        public string SoftwareCode { get; set; }
+        public string SoftwareName { get; set; }
+        public string? SoftwareDescription { get; set;}
+        public int? SoftwareStatus { get; set; }
+
+        public override object[] GetKeys()
+        {
+            return new object[] { SoftwareCode };
+        }
+    }
+}

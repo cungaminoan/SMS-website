@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Volo.Abp.Domain.Entities;
+
+namespace SMS.MstVersionLocations
+{
+    public class MstVersionLocation : Entity
+    {
+        [Key]
+        public string SoftwareCode { get; set; }
+        [Key]
+        public string VersionCode { get; set; }
+        public string? Factorycode { get; set; }
+        public string? LinelCode { get; set; }
+        public string? ProcessCode { get; set; }
+        public string? FromDate { get; set; }
+        public string? ToDate { get; set; }
+        public string? SoftwareStatus { get; set; }
+
+
+
+        public override object?[] GetKeys()
+        {
+            return new object?[] { SoftwareCode, VersionCode };
+        }
+    }
+}
